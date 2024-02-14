@@ -6,8 +6,8 @@ import javax.swing.JOptionPane;
 import java.util.Scanner;
 
 public class Main_Menu {
-    
-    public static void main(String[] args) {
+
+    public static void menu() {
 
 		//Main Menu to provide User with options
         String option = JOptionPane.showInputDialog(null, 
