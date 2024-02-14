@@ -19,35 +19,72 @@ public class Swimming {
         switch (optionbm) {
 
             case "1":
-                Swimming_Moderate();
+                SwimmingMod();
                 break;
 
             case "2":
-                Swimming_Vigorous();
+                SwimmingVig();
                 break;
             
             case "3":
-                Main_Menu.menu();
+                MainMenu.menu();
 
             default:
                 System.out.println("Please enter a numerical value between 1 - 3.");
         }
     }
 
-    public static float Swimming_Moderate() {
+    public static double SwimmingMod() {
 
         //to do - make calculations for moderate biking
 
-        return float;
+        double s_mod = 6.8;
+        
+        String optionswimmod = JOptionPane.showInputDialog(null, 
+				String.format(
+                "Total Calories\n\n" + 
+                "How many minutes did you bike?\n"));        
+
+        int minutesswimmod = Integer.valueOf(optionswimmod);
+
+        double totalcalmodswim = minutesswimmod * s_mod;
+
+        return totalcalmodswim;
 
     }
 
-    public static float Swimming_Vigorous () {
+    public static double SwimmingVig () {
 
         //to do - make calculations for vigorous biking
 
-        return float;
+        double s_vig = 14.8;
 
+        String optionswimvig = JOptionPane.showInputDialog(null, 
+        String.format(
+        "Total Calories\n\n" + 
+        "How many minutes did you bike?\n"));   
+        
+        int minutesswimvig = Integer.valueOf(optionswimvig);
+
+        double totalcalvigswim = minutesswimvig * s_vig;
+
+        return totalcalvigswim;
+
+    }
+
+    public static double TotalCalSwi (double totalcalmodswim, double totalcalvigswim) {
+
+        double totalcalswim = totalcalmodswim + totalcalvigswim;
+        
+        return totalcalswim;
+
+    }
+
+    public static double TotalMinsSwi (double minutesswimmod, double minutesswimvig) {
+
+        double totalminsswim = minutesswimmod + minutesswimvig;
+
+        return totalminsswim;
     }
 
 }

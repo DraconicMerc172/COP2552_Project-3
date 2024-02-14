@@ -1,14 +1,14 @@
 //Justin Trebour
 //COP2552
-//Workout Tracker - Running
+//Workout Tracker - Weight Training
 
 import javax.swing.JOptionPane;
 
-public class Running {
+public class WeightTraining {
     
     public static void Menu () {
 
-        //Main Menu to provide User with options
+        		//Main Menu to provide User with options
         String optionbm = JOptionPane.showInputDialog(null, 
 				String.format(
                 "Activity Monitor\n\n" + 
@@ -19,11 +19,11 @@ public class Running {
         switch (optionbm) {
 
             case "1":
-                RunningMod();
+                WeightMod();
                 break;
 
             case "2":
-                RunningVig();
+                WeightVig();
                 break;
             
             case "3":
@@ -34,59 +34,57 @@ public class Running {
         }
     }
 
-    public static double RunningMod() {
+    public static double WeightMod () {
 
         //to do - make calculations for moderate biking
 
-        double r_mod = 12;
+        double we_mod = 3.7;
         
-        String optionrunmod = JOptionPane.showInputDialog(null, 
+        String optionweimod = JOptionPane.showInputDialog(null, 
 				String.format(
                 "Total Calories\n\n" + 
                 "How many minutes did you bike?\n"));        
 
-        int minutesrunbik = Integer.valueOf(optionrunmod);
+        int minutesweimod = Integer.valueOf(optionweimod);
 
-        double totalcalmodrun = minutesrunbik * r_mod;
+        double totalcalmodwei = minutesweimod * we_mod;
 
-        return totalcalmodrun;
+        return totalcalmodwei;
 
     }
 
-    public static double RunningVig () {
+    public static double WeightVig () {
 
         //to do - make calculations for vigorous biking
 
-        double r_vig = 17;
+        double we_vig = 5.9;
 
-        String optionrunvig = JOptionPane.showInputDialog(null, 
+        String optionweivig = JOptionPane.showInputDialog(null, 
         String.format(
         "Total Calories\n\n" + 
         "How many minutes did you bike?\n"));   
         
-        int minutesrunvig = Integer.valueOf(optionrunvig);
+        int minutesweivig = Integer.valueOf(optionweivig);
 
-        double totalcalvigbike = minutesrunvig * r_vig;
+        double totalcalvigwei = minutesweivig * we_vig;
 
-        return totalcalvigbike;
+        return totalcalvigwei;
 
     }
+    public static double TotalCalWei (double totalcalmodwei, double totalcalvigwei) {
 
-    public static double TotalCalRun (double totalcalmodrun, double totalcalvigrun) {
-
-        double totalcalrun = totalcalmodrun + totalcalvigrun;
+        double totalcalwei = totalcalmodwei + totalcalvigwei;
         
-        return totalcalrun;
+        return totalcalwei;
 
     }
 
-    public static double TotalMinsRun (double minutesrunmod, double minutesrunvig) {
+    public static double TotalMinsWei (double minutesweimod, double minutesweivig) {
 
-        double totalminsrun = minutesrunmod + minutesrunvig;
+        double totalminswei = minutesweimod + minutesweivig;
 
-        return totalminsrun;
-
+        return totalminswei;
     }
 
-    
+
 }

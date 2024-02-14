@@ -19,22 +19,22 @@ public class Biking {
         switch (optionbm) {
 
             case "1":
-                Biking_Moderate();
+                BikingMod();
                 break;
 
             case "2":
-                Biking_Vigorous();
+                BikingVig();
                 break;
             
             case "3":
-                Main_Menu.menu();
+                MainMenu.menu();
 
             default:
                 System.out.println("Please enter a numerical value between 1 - 3.");
         }
     }
 
-    public static double Biking_Moderate() {
+    public static double BikingMod() {
 
         //to do - make calculations for moderate biking
 
@@ -45,15 +45,15 @@ public class Biking {
                 "Total Calories\n\n" + 
                 "How many minutes did you bike?\n"));        
 
-        int minutesbik = Integer.valueOf(optionbikmod);
+        int minutesbikmod = Integer.valueOf(optionbikmod);
 
-        double totalcalmodbike = minutesbik * b_mod;
+        double totalcalmodbike = minutesbikmod * b_mod;
 
         return totalcalmodbike;
 
     }
 
-    public static double Biking_Vigorous () {
+    public static double BikingVig () {
 
         //to do - make calculations for vigorous biking
 
@@ -64,11 +64,27 @@ public class Biking {
         "Total Calories\n\n" + 
         "How many minutes did you bike?\n"));   
         
-        int minutesvig = Integer.valueOf(optionbikvig);
+        int minutesbikvig = Integer.valueOf(optionbikvig);
 
-        double totalcalvigbike = minutesvig * b_vig;
+        double totalcalvigbike = minutesbikvig * b_vig;
 
         return totalcalvigbike;
+
+    }
+
+    public static double TotalCalBik(double totalcalmodbike, double totalcalvigbike) {
+
+        double totalcalbik = totalcalmodbike + totalcalvigbike;
+        
+        return totalcalbik;
+
+    }
+
+    public static double TotalMinsBik (double minutesbikmod, double minutesbikvig) {
+
+        double totalminsbik = minutesbikmod + minutesbikvig;
+
+        return totalminsbik;
 
     }
 
